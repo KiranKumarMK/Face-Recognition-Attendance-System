@@ -28,35 +28,12 @@ while True:
         roi_gray = gray[y:y + h, x:x + w]
         cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2);
         id, conf = recognizer.predict(roi_gray)
-        if (id == 79):
-                id = 'Kiran Kumar M K'
+        if (id == **ID Number**):
+                id = 'Name'
                 if ((str(id)) not in dict):
-                    filename = xlwrite.output('attendance', 'class1', 1, id, 'Present', "79");
+                    filename = xlwrite.output('attendance', 'class1', 1, id, 'Present', "**ID Number**");
                     dict[str(id)] = str(id);
 
-        elif (id == 36):
-                id = 'Charitra'
-                if ((str(id)) not in dict):
-                    filename = xlwrite.output('attendance', 'class1', 2, id, 'Present', "36");
-                    dict[str(id)] = str(id);
-
-        elif (id == 1):
-                id = 'Hemalatha M K'
-                if ((str(id)) not in dict):
-                    filename = xlwrite.output('attendance', 'class1', 3, id, 'Present', "1");
-                    dict[str(id)] = str(id)
-
-        elif (id == 3):
-                id = 'Manjulamma H R'
-                if ((str(id)) not in dict):
-                    filename = xlwrite.output('attendance', 'class1', 4, id, 'Present', "3");
-                    dict[str(id)] = str(id)
-
-        elif (id == 6):
-                id = 'Karibasavaiah H M'
-                if ((str(id)) not in dict):
-                    filename = xlwrite.output('attendance', 'class1', 5, id, 'Present', "6");
-                    dict[str(id)] = str(id)
 
         cv2.putText(img, str(id) + " " + str(conf), (x, y - 10), font, 0.55, (120, 255, 120), 1)
         # cv2.cv.PutText(cv2.cv.fromarray(img),str(id),(x,y+h),font,(0,0,255));
